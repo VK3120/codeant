@@ -1,124 +1,93 @@
-/* repositories.css */
 
-.repositories-container {
-    flex: 1; /* Adjust to take up remaining space dynamically */
-    width: 20%; /* Ensure it spans the full available width */
-    height: 100%; /* Ensure it spans the full available height */
-    padding: 24px 0 0 0; /* Padding as per the frame details */
-    background-color: #FAFAFA; /* Frame background color */
-    border: 1px solid #E9EAEB; /* Frame border details */
-    border-radius: var(--radius-xl); /* Border radius */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Shadow as per requirements */
-    overflow-y: auto; /* Add scroll if content overflows */
+  
+  /* Main Content */
+  .main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #f5f5f5;
+    overflow-y: auto;
+  }
+  
+  .header {
     display: flex;
-    flex-direction: column;
-    align-items: center; /* Center repositories content */
-}
-
-
-.repositories-header {
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-}
-
-.repositories-header h2 {
-    font-size: 24px;
-    margin-bottom: 5px;
-}
-
-.repositories-header p {
-    color: #777;
-    margin-bottom: 10px;
-}
-
-.header-actions {
-    display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 10px;
-}
-
-.search-bar {
-    padding: 5px 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    flex-grow: 1;
-}
-
-.refresh-button,
-.add-button {
-    padding: 5px 15px;
+    margin-bottom: 20px;
+    padding: 0 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header h2 {
+    margin: 0;
+  }
+  
+  .header-actions button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .refresh-button {
+    background-color: #292942;
+    color: white;
+  }
+  
+  .add-repo-button {
     background-color: #007bff;
     color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.refresh-button:hover,
-.add-button:hover {
-    background-color: #0056b3;
-}
-
-.repositories-list {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.repository-item {
-    padding: 15px;
+  }
+  
+  /* Repository Section */
+  .repo-section {
     background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.repo-header {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 95%; /* Matches header width */
+    margin: auto;
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .search-input {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .repository-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .repository-item {
+    padding: 15px; /* Increased size for better visibility */
+    margin-bottom: 10px; /* Spacing between items */
+    font-size: 16px;
+    border-bottom: 1px solid #ccc; /* Simple divider */
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.repo-header h3 {
-    margin: 0;
-}
-
-.repo-type {
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 12px;
-    text-transform: uppercase;
-}
-
-.repo-type.public {
-    background-color: #d4edda;
-    color: #155724;
-}
-
-.repo-type.private {
-    background-color: #f8d7da;
-    color: #721c24;
-}
-
-.repo-details {
-    display: flex;
-    justify-content: space-between;
-    margin: 10px 0;
-    font-size: 14px;
-    color: #555;
-}
-
-.repo-collaborators {
-    display: flex;
-    gap: 5px;
-    flex-wrap: wrap;
-}
-
-.collaborator {
-    padding: 5px 10px;
-    background-color: #e9ecef;
-    border-radius: 15px;
-    font-size: 12px;
-}
+  }
+  
+  .repository-item:last-child {
+    border-bottom: none;
+  }
+  
+  .repository-item.public {
+    color: #28a745; /* Public repo styling */
+  }
+  
+  .repository-item.private {
+    color: #007bff; /* Private repo styling */
+  }
+  

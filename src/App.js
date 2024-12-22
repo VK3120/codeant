@@ -21,9 +21,9 @@ function App() {
                 <div
                     style={{
                         flex: 1,
-                        padding: "24px",
+                        padding: "12px",
                         display: "flex",
-                        justifyContent: "center",
+                        justifyContent: "right",
                         alignItems: "center",
                         backgroundColor: "#FFFFFF",
                         border: "1px solid #E9EAEB",
