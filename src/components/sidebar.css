@@ -1,0 +1,104 @@
+/* sidebar.css */
+
+:root {
+    --spacing-xxs: 4px;
+    --spacing-xs: 8px;
+    --spacing-sm: 12px;
+    --spacing-md: 16px;
+    --spacing-lg: 20px;
+    --spacing-xl: 24px;
+    --spacing-2xl: 32px;
+    --spacing-3xl: 40px;
+}
+
+.sidebar {
+    width: 242px;
+    height: 100vh;
+    background-color: #FFFFFF;
+    border-right: 1px solid #E9EAEB;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+}
+
+.sidebar-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--spacing-xl);
+    border-bottom: 1px solid #E9EAEB;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.logo {
+    width: 32px;
+    height: 32px;
+}
+
+.dropdown {
+    margin-top: var(--spacing-md);
+    width: 100%;
+    padding: var(--spacing-xs);
+    border: 1px solid #E9EAEB;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.sidebar-navigation {
+    flex-grow: 1;
+    padding: var(--spacing-xl);
+}
+
+.navigation-item {
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-sm) 0;
+    gap: var(--spacing-md);
+    cursor: pointer;
+    color: #333;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.navigation-item:hover {
+    background-color: #F0F0F0;
+}
+
+.navigation-item.active {
+    background-color: #007BFF;
+    color: white;
+    border-radius: 4px;
+}
+
+.icon {
+    font-size: 20px;
+}
+
+.sidebar-footer {
+    padding: var(--spacing-xl);
+    border-top: 1px solid #E9EAEB;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.footer-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    color: #333;
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.footer-item:hover {
+    color: #007BFF;
+}
