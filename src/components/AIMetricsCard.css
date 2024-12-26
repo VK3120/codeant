@@ -1,0 +1,140 @@
+.metrics-container {
+    width: 50%;
+    padding: 20px;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .metrics-card {
+    width: 447px;
+    background: #ffffff;
+    border: 1px solid #e9eaeb;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header {
+    background: url('https://dashboard.codeparrot.ai/api/assets/Z2ULZo6CYQNjI8CT') no-repeat;
+    background-size: cover;
+    padding: 20px;
+    height: 170px;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+  
+  .logo img {
+    width: 28px;
+    height: 31px;
+  }
+  
+  .logo h2 {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 27px;
+    color: #081735;
+    margin: 0;
+  }
+  
+  .divider {
+    width: 100%;
+    margin: 10px 0;
+  }
+  
+  .stats-row {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+  }
+  
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .stat-value {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 27px;
+    color: #081735;
+  }
+  
+  .stat-label {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #171717;
+  }
+  
+  .issues-card {
+    position: relative;
+    height: 164px;
+    margin: 20px;
+    background: url('https://dashboard.codeparrot.ai/api/assets/Z2ULZo6CYQNjI8CU') no-repeat;
+    background-size: cover;
+    border-radius: 12px;
+  }
+  
+  .issues-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    padding: 15px;
+  }
+  
+  .chart-icon img {
+    width: 56px;
+    height: 56.77px;
+  }
+  
+  .issues-stats {
+    margin-left: 20px;
+    margin-top: auto;
+  }
+  
+  .issues-label {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    color: #171717;
+  }
+  
+  .issues-value {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 32px;
+    color: #081735;
+  }
+  
+  .growth-indicator {
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  
+  .growth-indicator img {
+    width: 24px;
+    height: 24.33px;
+  }
+  
+  .growth-value {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    color: #0049c6;
+  }
+  
+  .growth-period {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #171717;
+  }
+  
+  

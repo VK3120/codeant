@@ -1,41 +1,59 @@
-import React from "react";
-import Sidebar from "./components/sidebar";
-import Repositories from "./components/Repos";
+import React, { useState } from 'react'
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
+import Sidebar from './components/Sidebar'
+import Repositories from './components/Repositories'
+import { ReactComponent as ChevronDownIcon } from './assets/icons/chevron-down.svg'
+import { ReactComponent as CloseIcon } from './assets/icons/close.svg'
+import logo from './assets/logo.png'
+import WelcomeScreen from './components/WelcomeScreen'
+import './App.css'
 
-function App() {
-    return (
-        <div style={{ display: "flex", height: "100vh" }}>
-            {/* Sidebar */}
-            <Sidebar />
-
-            {/* Main Content */}
-            <div
-                style={{
-                    flex: 1,
-                    display: "flex",
-                    flexDirection: "column",
-                    backgroundColor: "#FAFAFA",
-                }}
-            >
-                {/* Repositories Frame */}
-                <div
-                    style={{
-                        flex: 1,
-                        padding: "12px",
-                        display: "flex",
-                        justifyContent: "right",
-                        alignItems: "center",
-                        backgroundColor: "#FFFFFF",
-                        border: "1px solid #E9EAEB",
-                        borderRadius: "var(--radius-xl)",
-                        boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
-                    }}
-                >
-                    <Repositories />
-                </div>
-            </div>
-        </div>
-    );
+// Layout component for dashboard pages
+const DashboardLayout = ({ children }) => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
+  
+  return (
+    <div className="app">
+      <div className="mobile-header">
+        <button className="menu-toggle" onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
+          {isSidebarOpen ? <CloseIcon /> : <ChevronDownIcon />}
+        </button>
+        <img src={logo} alt="CodeAnt AI" className="mobile-logo" />
+      </div>
+      <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
+      <main className="main-content">
+        {children}
+      </main>
+    </div>
+  )
 }
 
-export default App;
+const App = () => {
+  return (
+    <Router>
+      <Routes>
+        {/* Public route - Sign Up/Login page */}
+        <Route path="/" element={<WelcomeScreen />} />
+        <Route path="/signup" element={<WelcomeScreen />} />
+        
+        {/* Dashboard routes */}
+        <Route path="/dashboard" element={
+          <DashboardLayout>
+            <Repositories />
+          </DashboardLayout>
+        } />
+        
+        <Route path="/repositories" element={
+          <DashboardLayout>
+            <Repositories />
+          </DashboardLayout>
+        } />
+
+        {/* Catch all route - redirect to home */}
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </Router>
+  )
+}
+
+export default App

@@ -1,49 +1,79 @@
-// sidebar.js
 import React from 'react';
-import './sidebar.css';
+import './Sidebar.css';
+import logo from '../assets/logo.png';
+// Import SVG icons
+import { ReactComponent as RepositoryIcon } from '../assets/icons/repository.svg';
+import { ReactComponent as CodeReviewIcon } from '../assets/icons/code-review.svg';
+import { ReactComponent as SecurityIcon } from '../assets/icons/security.svg';
+import { ReactComponent as HelpIcon } from '../assets/icons/help.svg';
+import { ReactComponent as SettingsIcon } from '../assets/icons/settings.svg';
+import { ReactComponent as SupportIcon } from '../assets/icons/support.svg';
+import { ReactComponent as LogoutIcon } from '../assets/icons/logout.svg';
 
-function Sidebar() {
-    return (
-        <div className="sidebar">
-            <div className="sidebar-header">
-                <div className="logo-container">
-                    <img src={require("../assets/logo.png")} alt="CodeAnt AI Logo" className="logo" />
-                    <h2>CodeAnt AI</h2>
-                </div>
-                <select className="dropdown">
-                    <option>UtkarshDhairyaPa...</option>
-                </select>
-            </div>
-            <div className="sidebar-navigation">
-                <div className="navigation-item active">
-                    <img src={require("../assets/repositories.png")} alt="Repositories Icon" className="icon" />
-                    
-                </div>
-                <div className="navigation-item">
-                    <img src={require("../assets/ai-code.png")} alt="AI Code Review Icon" className="icon" />
-                   
-                </div>
-                <div className="navigation-item">
-                    <img src={require("../assets/cloud.png")} alt="Cloud Security Icon" className="icon" />
-                    
-                </div>
-                <div className="navigation-item">
-                    <img src={require("../assets/settings.png")} alt="Settings Icon" className="icon" />
-                    
-                </div>
-            </div>
-            <div className="sidebar-footer">
-                <div className="footer-item">
-                    <img src={require("../assets/support-icon.png")} alt="Support Icon" className="icon" />
-                    
-                </div>
-                <div className="footer-item">
-                    <img src={require("../assets/logout-icon.png")} alt="Logout Icon" className="icon" />
-                    
-                </div>
-            </div>
-        </div>
-    );
-}
+const Sidebar = () => {
+  return (
+    <div className="sidebar">
+      <div className="logo">
+        <img src={logo} alt="CodeAnt AI" />
+      </div>
+      
+      <div className="user-info">
+        <span className="username">UtkarshDhairyaPanwar</span>
+      </div>
+      
+      <nav className="nav-menu">
+        <ul>
+          <li>
+            <a href="#repositories" className="active">
+              <RepositoryIcon className="nav-icon" />
+              Repositories
+            </a>
+          </li>
+          <li>
+            <a href="#code-review">
+              <CodeReviewIcon className="nav-icon" />
+              AI Code Review
+            </a>
+          </li>
+          <li>
+            <a href="#security">
+              <SecurityIcon className="nav-icon" />
+              Cloud Security
+            </a>
+          </li>
+          <li>
+            <a href="#how-to">
+              <HelpIcon className="nav-icon" />
+              How to Use
+            </a>
+          </li>
+          <li>
+            <a href="#settings">
+              <SettingsIcon className="nav-icon" />
+              Settings
+            </a>
+          </li>
+        </ul>
+      </nav>
 
-export default Sidebar;
+      <div className="bottom-menu">
+        <ul>
+          <li>
+            <a href="#support">
+              <SupportIcon className="nav-icon" />
+              Support
+            </a>
+          </li>
+          <li>
+            <a href="#logout">
+              <LogoutIcon className="nav-icon" />
+              Logout
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  );
+};
+
+export default Sidebar; 
