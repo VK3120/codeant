@@ -89,7 +89,7 @@
 
 .repo-name {
   font-size: 16px;
-  color: #0066ff;
+  color: #0d0d0e;
   margin-bottom: 12px;
 }
 
@@ -105,13 +105,13 @@
 }
 
 .repo-type.private {
-  background-color: #ffeaea;
-  color: #ff4444;
+  background-color:  #e3f2fd;
+  color:  #0066ff;
 }
 
 .repo-type.anonymous {
-  background-color: #fff3e0;
-  color: #ff9800;
+  background-color:  #e3f2fd;
+  color:  #0066ff;
 }
 
 .repo-details {
@@ -141,7 +141,7 @@
 }
 
 .language-dot.javascript {
-  background-color: #f7df1e;
+  background-color: #0ad01a;
 }
 
 .language-dot.react {
@@ -149,7 +149,7 @@
 }
 
 .language-dot.python {
-  background-color: #3776ab;
+  background-color: #ebdf32;
 }
 
 .repo-contributors {

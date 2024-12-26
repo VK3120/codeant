@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import './WelcomeScreen.css';
 
-// Import icons from assets directory
+// Import assets
 import GithubIcon from '../assets/icons/GitHub.png';
 import BitbucketIcon from '../assets/icons/BitBucket.png';
 import AzureIcon from '../assets/icons/Azure.png';
 import GitlabIcon from '../assets/icons/GitLab.png';
-import CodeAntLogo from '../assets/logo.png';
+import CodeAntLogo from '../assets/logo.png'; // CodeAnt Logo
+import SubtractImage from '../assets/icons/Subtract.png'; // Subtract image
 
 const WelcomeScreen = () => {
   const [activeTab, setActiveTab] = useState('SAAS');
@@ -25,7 +26,6 @@ const WelcomeScreen = () => {
   ];
 
   const handleSignIn = (provider) => {
-    // Handle sign in logic here
     console.log(`Signing in with ${provider}`);
   };
 
@@ -60,24 +60,23 @@ const WelcomeScreen = () => {
               <div className="issues-value">500K+</div>
               <div className="issues-growth">
                 <span className="growth-arrow">↑</span>
-                <span className="growth-value">14%</span>
-                <span className="growth-period">This week</span>
+                <span className="growth-value">10%</span>
+                <span className="growth-period">Last 30 days</span>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Right Half - Login Form */}
+      {/* Right Half - Welcome Section */}
       <div className="welcome-container">
         <div className="welcome-card">
           <div className="content-section">
             <div className="logo-section">
               <img src={CodeAntLogo} alt="CodeAnt Logo" className="logo" />
+              <span className="logo-text">CodeAnt AI</span>
             </div>
-
-            <h1 className="welcome-title">Welcome to CodeAnt AI</h1>
-
+            <h1 className="welcome-title">Welcome to CodeAnt!</h1>
             <div className="tabs-container">
               <button
                 className={`tab-button ${activeTab === 'SAAS' ? 'active' : ''}`}
@@ -95,23 +94,30 @@ const WelcomeScreen = () => {
           </div>
 
           <div className="auth-section">
-            {(activeTab === 'SAAS' ? saasOptions : selfHostedOptions).map((option) => (
+            {/* Render options based on the active tab */}
+            {(activeTab === 'SAAS' ? saasOptions : selfHostedOptions).map((option, index) => (
               <button
-                key={option.provider}
+                key={index}
                 className="sign-in-button"
                 onClick={() => handleSignIn(option.provider)}
               >
-                <img src={option.icon} alt={option.provider} className="provider-icon" />
+                <img
+                  src={option.icon}
+                  alt={`${option.provider} Icon`}
+                  className="provider-icon"
+                />
                 <span>{option.label}</span>
               </button>
             ))}
           </div>
+          <div className="privacy-notice">
+            By signing in, you agree to our <a href="#">Privacy Policy</a> and <a href="#">Terms of Service</a>.
+          </div>
         </div>
-
-        <p className="privacy-notice">
-          By signing up you agree to the <a href="#">Privacy Policy</a>.
-        </p>
       </div>
+
+      {/* Add the subtract image to the bottom left corner */}
+      <img src={SubtractImage} alt="Subtract Image" className="subtract-image" />
     </div>
   );
 };
